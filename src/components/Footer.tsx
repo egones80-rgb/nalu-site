@@ -1,4 +1,4 @@
-import { Logo } from "./Logo";
+const LOGO_SRC = "/nalu.png";
 
 export function Footer() {
   return (
@@ -16,7 +16,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5">
-              <Logo size={32} variant="dark" />
+              <img
+                src={LOGO_SRC}
+                alt="Nalu Odontologia"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-md object-contain"
+              />
               <span className="text-sm font-medium tracking-tight text-zinc-900">
                 Nalu <span className="text-zinc-500">Odontologia</span>
               </span>

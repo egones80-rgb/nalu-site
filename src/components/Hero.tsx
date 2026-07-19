@@ -3,7 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ParticleField } from "./ParticleField";
-import { Logo } from "./Logo";
+
+const LOGO_SRC = "/nalu.png";
 
 gsap.registerPlugin(useGSAP);
 
@@ -81,7 +82,16 @@ export function Hero() {
         style={{ y: yHero, opacity: opacityHero, scale: scaleHero }}
         className="relative z-10 container-nalu flex min-h-svh flex-col items-center justify-center pt-28 pb-20 md:pt-32 md:pb-24 text-center"
       >
-        <Logo size={56} animated variant="dark" className="mb-9" />
+        <motion.img
+          src={LOGO_SRC}
+          alt="Nalu Odontologia"
+          width={72}
+          height={72}
+          initial={{ opacity: 0, scale: 0.85, filter: "blur(8px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-9 h-16 w-16 md:h-[72px] md:w-[72px] rounded-xl object-contain"
+        />
 
         <motion.span
           initial={{ opacity: 0, y: 10 }}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Logo } from "./Logo";
+
+const LOGO_SRC = "/nalu.png";
 
 const links = [
   { href: "#diferenciais", label: "Diferenciais" },
@@ -34,7 +35,13 @@ export function Navbar() {
     >
       <nav className="container-nalu flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 group">
-          <Logo size={32} variant="dark" />
+          <img
+            src={LOGO_SRC}
+            alt="Nalu Odontologia"
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-md object-contain"
+          />
           <span className="text-sm font-medium tracking-tight text-zinc-900">
             Nalu <span className="text-zinc-500">Odontologia</span>
           </span>
