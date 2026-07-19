@@ -54,9 +54,10 @@ export function Confianca() {
             Cada detalhe, <span className="italic text-gradient-emerald">com precisão de cirurgião</span>.
           </h2>
           <p className="mt-7 text-base md:text-lg text-zinc-600 leading-relaxed max-w-xl">
-            Por trás de cada sorriso entregue está uma equipe que estuda,
-            planeja e executa com critério. A tecnologia amplia nosso alcance
-            — mas é o cuidado humano que sustenta o resultado.
+            Por trás de cada sorriso — do primeiro ao último paciente da família —
+            está uma equipe que estuda, planeja e executa com critério. A
+            tecnologia amplia nosso alcance, mas é o cuidado humano que sustenta
+            o resultado.
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-6 max-w-md">
@@ -77,29 +78,13 @@ export function Confianca() {
 
         <div className="conf-img md:col-span-6 relative">
           <div className="relative aspect-[4/5] md:aspect-[5/6] overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-50 via-white to-emerald-50">
-            {/* Spot light dramático emerald */}
-            <div
-              className="absolute inset-0"
-              aria-hidden="true"
-              style={{
-                background:
-                  "radial-gradient(circle at 30% 30%, rgba(4,120,87,0.18), transparent 55%), radial-gradient(circle at 80% 80%, rgba(16,185,129,0.08), transparent 50%)",
-              }}
+            {/* Foto real do consultório infantil */}
+            <img
+              src="/atendimento-infantil.png"
+              alt="Consultório infantil da Nalu Odontologia"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg
-                viewBox="0 0 200 240"
-                className="w-2/3 h-2/3 text-emerald-700/30"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.8"
-                aria-hidden="true"
-              >
-                <circle cx="100" cy="60" r="28" />
-                <path d="M60 240 Q60 130 100 110 Q140 130 140 240" />
-                <path d="M75 160 Q100 175 125 160" strokeLinecap="round" />
-              </svg>
-            </div>
 
             <div
               className="absolute top-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-emerald-700/50 to-transparent"
@@ -113,10 +98,10 @@ export function Confianca() {
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
               <div>
                 <div className="text-xs uppercase tracking-[0.2em] text-emerald-700">
-                  Em atendimento
+                  Pensado pra eles
                 </div>
                 <div className="mt-1 text-sm text-zinc-700 font-medium">
-                  Precisão em cada gesto
+                  Odontopediatria com afeto
                 </div>
               </div>
               <div className="h-2 w-2 rounded-full bg-emerald-700 shadow-[0_0_12px_2px_rgba(4,120,87,0.7)] animate-pulse" />
