@@ -93,13 +93,7 @@ export function Sobre() {
                   src={d.foto}
                   alt={d.nome}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-
-                {/* Vinheta sutil pra dar leitura ao nome na base */}
-                <div
-                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"
-                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-contain"
                 />
 
                 {/* Iniciais flutuantes (badge) */}
