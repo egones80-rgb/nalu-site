@@ -90,7 +90,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.85, filter: "blur(8px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-9 h-16 w-16 md:h-[72px] md:w-[72px] rounded-xl object-contain"
+          className="mb-9 h-16 w-16 md:h-[72px] md:w-[72px] rounded-full object-contain bg-white"
         />
 
         <motion.span

@@ -21,7 +21,7 @@ export function Footer() {
                 alt="Nalu Odontologia"
                 width={36}
                 height={36}
-                className="h-9 w-9 rounded-md object-contain"
+                className="h-9 w-9 rounded-full object-contain"
               />
               <span className="text-sm font-medium tracking-tight text-zinc-900">
                 Nalu <span className="text-zinc-500">Odontologia</span>
