@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Nalu Odontologia — Design Tokens
+   Paleta: off-white quente + branco puro + verde esmeralda profundo
+   Tipografia: Inter (corpo) + Fraunces (display com serifa suave)
+   ============================================================ */
+
+@theme {
+  /* Fundos — claros, respirados */
+  --color-bg-base: #FAFAF7;          /* off-white quente (papel premium) */
+  --color-bg-elevated: #FFFFFF;      /* branco puro (cards, seções alternadas) */
+  --color-bg-card: rgba(255, 255, 255, 1);
+
+  /* Verde esmeralda — profundo, sofisticado */
+  --color-emerald-50:  #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;       /* ACENTO PRINCIPAL */
+  --color-emerald-800: #065f46;
+
+  /* Acento principal */
+  --color-accent: #047857;
+  --color-accent-hover: #065f46;
+  --color-accent-soft: #ecfdf5;
+  --color-accent-glow: rgba(4, 120, 87, 0.18);
+
+  /* Texto */
+  --color-text-primary: #0A0A0A;      /* headlines — preto suave */
+  --color-text-secondary: #3F3F46;    /* corpo — zinc-700 */
+  --color-text-muted: #71717A;        /* zinc-500 */
+  --color-text-dim: #A1A1AA;          /* zinc-400 */
+
+  /* Bordas */
+  --color-border: rgba(10, 10, 10, 0.08);
+  --color-border-strong: rgba(10, 10, 10, 0.14);
+
+  /* Tipografia */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", "Inter", system-ui, serif;
+
+  /* Animações */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-base);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* Container utilitário */
+.container-nalu {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-nalu {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-nalu {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Headlines serif premium */
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01";
+  letter-spacing: -0.02em;
+}
+
+/* Texto com gradient emerald — claro/escuro pra contraste em fundo claro */
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #0A0A0A 0%, #047857 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Vidro fosco — adaptado pra claro: backdrop-filter neutro */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(10, 10, 10, 0.06);
+  border-radius: 16px;
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+/* Glow esmeralda — mais sutil em fundo claro */
+.glow-emerald {
+  box-shadow:
+    0 0 0 1px rgba(4, 120, 87, 0.15),
+    0 8px 32px -8px rgba(4, 120, 87, 0.25);
+}
+
+/* Botão primário — emerald profundo */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  background: var(--color-accent);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow:
+    0 1px 2px rgba(4, 120, 87, 0.2),
+    0 8px 24px -8px rgba(4, 120, 87, 0.45);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 2px rgba(6, 95, 70, 0.25),
+    0 12px 32px -8px rgba(4, 120, 87, 0.55);
+}
+
+/* Botão secundário — outline escuro */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  background: transparent;
+  border-radius: 9999px;
+  border: 1px solid rgba(10, 10, 10, 0.16);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.btn-secondary:hover {
+  background: rgba(10, 10, 10, 0.04);
+  border-color: rgba(10, 10, 10, 0.32);
+  transform: translateY(-2px);
+}
+
+/* Divisor horizontal sutil */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(10, 10, 10, 0.12) 50%,
+    transparent 100%
+  );
+}
+
+/* Reveal inicial (antes do GSAP animar) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar custom — clara */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 10, 10, 0.18);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 10, 10, 0.32);
+}
+
+/* Linha de luz (usada em algumas bordas) — emerald sutil */
+.line-glow {
+  position: relative;
+}
+.line-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 120, 87, 0.45),
+    transparent 50%,
+    rgba(4, 120, 87, 0.18)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Malha tecnológica sutil — fundo claro, linhas escuras bem leves */
+.tech-mesh {
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(4, 120, 87, 0.06), transparent 55%),
+    linear-gradient(rgba(10, 10, 10, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 56px 56px, 56px 56px;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* Vinheta sutil — mais leve em fundo claro */
+.vignette {
+  position: relative;
+}
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 65%, rgba(10, 10, 10, 0.06) 100%);
+}
